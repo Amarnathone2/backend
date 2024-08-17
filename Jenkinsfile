@@ -39,10 +39,10 @@ pipeline {
             }
         }
 
-         stage('Nexus Artifact Upload') {
+        stage('Nexus Artifact Upload') {
             steps {
-               script{
-                   nexusArtifactUploader(
+                script{
+                    nexusArtifactUploader(
                         nexusVersion: 'nexus3',
                         protocol: 'http',
                         nexusUrl: "${nexusURL}",
@@ -57,7 +57,7 @@ pipeline {
                             type: 'zip']
                         ]
                     )
-               }
+                }
             }
         }
         stage('Deploy'){
